@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+
+		html, body{
+			width: 100%;
+			height: 100%;
+		}
+
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		input{
+			width: 70%;
+			height: 60px;
+			background-color: #a5bff0;
+		}
+
+		#main{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		#btn{
+			width: 70%;
+			height: 60px;
+			background-color: #68A8F4;
+			color: white;
+		}
+
+		*{
+			font-size: 30px;
+			margin-top: 20px;
+			border: 0px;
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+
+		function Enviar(){
+
+			let dados = {
+				Nome: document.getElementById('Nome').value,
+				Usuario: document.getElementById('Usuário').value,
+				Email: document.getElementById('Email').value,
+				Senha: document.getElementById('Senha').value,
+				Senha: document.getElementById('Csenha').value
+			}
+
+			var options = {
+				method:'POST',
+				headers: { 'Content-Type':'application/JSON', },
+				body: JSON.stringify(dados)
+			};
+
+			fetch('', options)
+			.then(response => response.text())
+			.then(resposta => {
+			});
+
+
+		}
+
+
+	</script>
+
+</head>
+<body>
+
+	<div id="main">
+		<h1>Cadastro</h1>
+		<input type="" placeholder="Nome Completo" id="Nome">
+		<input type="" placeholder="Usuário" id="Usuário">
+		<input type="" placeholder="Email" id="Email">
+		<input type="" placeholder="Senha" id="Senha">
+		<input type="" placeholder="Confirmar Senha" id="Csenha">
+
+		<button id="btn" onclick="Enviar()">Enviar</button>
+
+	</div>
+
+</body>
+</html>
